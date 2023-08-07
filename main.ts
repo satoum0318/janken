@@ -1,12 +1,13 @@
 let dice: number[] = []
 input.onButtonPressed(Button.A, function () {
+    kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo1, 29)
+    kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, 29)
+    kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo3, 29)
     dice = [1, 2, 3]
     if (dice._pickRandom() == 1) {
-        music.play(music.stringPlayable("C5 B C5 - - - - - ", 200), music.PlaybackMode.UntilDone)
         kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo1, 90)
         basic.pause(500)
     } else if (dice._pickRandom() == 2) {
-        music.play(music.stringPlayable("G A B - - - - - ", 200), music.PlaybackMode.UntilDone)
         kitronik_simple_servo.setServoAngle(kitronik_simple_servo.ServoChoice.servo2, 90)
         basic.pause(500)
     } else {
